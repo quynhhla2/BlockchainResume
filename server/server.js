@@ -6,7 +6,7 @@ const dev = process.env.NODE_ENV != "production";
 const nextServer = next({ dev });
 const handle = nextServer.getRequestHandler();
 
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "../config.env" });
 const app = require("./app");
 
 const DB = process.env.DATABASE;
@@ -20,15 +20,8 @@ mongoose
   })
   .then(() => console.log("DB connection successful"));
 
-const port = 3000;
+const port = 3001;
 
-let server;
-nextServer.prepare().then(() => {
-  app.get("*", (req, res) => {
-    return handle(req, res);
-  });
-
-  app.listen(port, () => {
-    console.log(`App running on port ${port}...`)
-  })
-});
+app.listen(port, () => {
+  console.log(`App running on port ${port}...`)
+})

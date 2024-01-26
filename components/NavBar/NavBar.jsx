@@ -30,7 +30,13 @@ export const NavBar = () => {
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+  const [username, setUsername] = useState("");
 
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("user");
+    console.log("storedUsername: ", storedUsername)
+    setUsername(storedUsername);
+  },);
   const router = useRouter();
 
   const openMenu = (e) => {
@@ -91,13 +97,13 @@ export const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-              <DiJqueryLogo onClick={() => router.push("/")} />
+            <DiJqueryLogo onClick={() => router.push("/")} />
           </div>
 
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
               <input type="text" placeholder="Tìm kiếm" />
-              <BsSearch onClick={() => {}} className={Style.search_icon} />
+              <BsSearch onClick={() => { }} className={Style.search_icon} />
             </div>
           </div>
         </div>
@@ -146,20 +152,25 @@ export const NavBar = () => {
           </div>
 
           {/* USER PROFILE  */}
-          <div className={Style.navbar_container_right_profile_box}>
-            <div className={Style.navbar_container_right_profile}>
-              <Image
-                src={images.user1}
-                alt="Profile"
-                width={40}
-                height={40}
-                onClick={() => openProfile()}
-                className={Style.navbar_container_right_profile}
-              />
+          {
+            !username ? <Button btnName="Đăng nhập" handleClick={() => router.push("/login")} />
+              : (
+                <div className={Style.navbar_container_right_profile_box}>
+                  <div className={Style.navbar_container_right_profile}>
+                    <Image
+                      src={images.user1}
+                      alt="Profile"
+                      width={40}
+                      height={40}
+                      onClick={() => openProfile()}
+                      className={Style.navbar_container_right_profile}
+                    />
 
-              {profile && <Profile currentAccount={currentAccount} />}
-            </div>
-          </div>
+                    {profile && <Profile currentAccount={currentAccount} />}
+                  </div>
+                </div>
+              )
+          }
 
           {/* MENU BUTTON */}
           <div className={Style.navbar_container_right_menuBtn}>

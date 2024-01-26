@@ -2,14 +2,20 @@ import React from "react";
 import Image from "next/image";
 import { FaUserAlt, FaRegImage, FaUserEdit } from "react-icons/fa";
 import { MdHelpCenter } from "react-icons/md";
-import { TbDownloadOff, TbDownload } from "react-icons/tb";
+import { useDispatch, useSelector } from "react-redux";
+import { TbDownloadOff, TbDownload, TbLogout } from "react-icons/tb";
+import { toast } from "react-toastify";
 import Link from "next/link";
 
 // INTERNAL IMPORT
 import Style from "./Profile.module.css";
 import images from "../../../img";
+import { useRouter } from "next/router";
 
 const Profile = ({ currentAccount }) => {
+  const router = useRouter()
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
   return (
     <div className={Style.profile}>
       <div className={Style.profile_account}>
@@ -22,7 +28,7 @@ const Profile = ({ currentAccount }) => {
         />
 
         <div className={Style.profile_account_info}>
-          <p>Nguyễn Thúy Quỳnh</p>
+          <p>{user?.name}</p>
           <small>{currentAccount.slice(0, 18)}..</small>
         </div>
       </div>
@@ -63,6 +69,16 @@ const Profile = ({ currentAccount }) => {
             <TbDownload />
             <p>
               <Link href={{ pathname: "/aboutUs" }}>Liên hệ</Link>
+            </p>
+          </div>
+          <div className={Style.profile_menu_one_item}>
+            <TbLogout />
+            <p onClick={() => {
+              localStorage.clear();
+              router.reload();
+              toast.success("User logout successfully", { autoClose: 1500 });
+            }}>
+              Đăng xuất
             </p>
           </div>
         </div>
