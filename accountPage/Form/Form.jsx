@@ -108,7 +108,7 @@ const Form = () => {
           <div className={Style.Form_box_btn}>
             <Button
               btnName="Cập nhật"
-              handleClick={() => {}}
+              handleClick={() => { }}
               classStyle={Style.button}
             />
           </div>

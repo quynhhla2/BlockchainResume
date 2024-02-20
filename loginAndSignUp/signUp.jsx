@@ -29,6 +29,7 @@ const SignUp = () => {
     const password = watch("password", "");
 
     const onSubmit = (data) => {
+        console.log("data: ", data)
         dispatch(registerUser(data));
     };
 

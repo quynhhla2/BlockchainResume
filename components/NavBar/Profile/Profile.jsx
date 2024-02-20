@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaUserAlt, FaRegImage, FaUserEdit } from "react-icons/fa";
-import { MdHelpCenter } from "react-icons/md";
+import { MdHelpCenter, MdWork } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { TbDownloadOff, TbDownload, TbLogout } from "react-icons/tb";
 import { toast } from "react-toastify";
@@ -53,6 +53,13 @@ const Profile = ({ currentAccount }) => {
             <FaUserEdit />
             <p>
               <Link href={{ pathname: "/account" }}>Chỉnh sửa thông tin</Link>
+            </p>
+          </div>
+
+          <div className={Style.profile_menu_one_item}>
+            <MdWork />
+            <p>
+              <Link href={{ pathname: "/uploadJob" }}>Đăng bài tuyển dụng</Link>
             </p>
           </div>
         </div>
