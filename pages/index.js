@@ -39,24 +39,24 @@ const Home = () => {
     <div className={Style.homePage}>
       <HeroSection />
       {/* <Service /> */}
-      {/* <BigNFTSlider /> */}
-      {/* <Title
+      <BigNFTSlider />
+      <Title
         heading="Bộ sưu tập mới"
         paragraph="Khám phá hồ sơ trong các danh mục nổi bật nhất."
-      /> */}
+      />
       {/* <FollowerTab /> */}
-      {/* <Collection /> */}
-      {/* <Title
+      <Collection />
+      <Title
         heading="Hồ sơ nổi bật"
         paragraph="Khám phá hồ sơ trong các danh mục nổi bật nhất."
-      /> */}
+      />
       {/* <Filter /> */}
       <NFTCard NFTData={nfts} />
-      {/* <Title
+      <Title
         heading="Tìm kiếm bằng danh mục"
         paragraph="Khám phá hồ sơ trong các danh mục nổi bật nhất."
       />
-      <Category /> */}
+      <Category />
       {/* <Subscribe /> */}
       <Brand />
     </div>

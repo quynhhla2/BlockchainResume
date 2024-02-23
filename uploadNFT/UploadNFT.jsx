@@ -175,14 +175,14 @@ const UploadNFT = ({ uploadToPinata, createNFT }) => {
         </div>
         <div className={formStyle.Form_box_input_social}>
           <div className={formStyle.Form_box_input}>
-            <label htmlFor="royalties">Royalties</label>
+            <label htmlFor="royalties">Tuổi</label>
             <div className={formStyle.Form_box_input_box}>
               <div className={formStyle.Form_box_input_box_icon}>
                 <FaPercent />
               </div>
               <input
                 type="text"
-                placeholder="20%"
+                placeholder="20"
                 onChange={(e) => setRoyalties(e.target.value)}
               />
             </div>
@@ -203,14 +203,14 @@ const UploadNFT = ({ uploadToPinata, createNFT }) => {
           </div>
 
           <div className={formStyle.Form_box_input}>
-            <label htmlFor="properties">Properties</label>
+            <label htmlFor="properties">Giới tính</label>
             <div className={formStyle.Form_box_input_box}>
               <div className={formStyle.Form_box_input_box_icon}>
                 <AiTwotonePropertySafety />
               </div>
               <input
                 type="text"
-                placeholder="Properties"
+                placeholder="Nam/Nữ"
                 onChange={(e) => setProperties(e.target.value)}
               />
             </div>

@@ -69,25 +69,25 @@ const DropZone = ({
             <div className={Style.DropZone_box_aside_box_preview}>
               <div className={Style.DropZone_box_aside_box_preview_one}>
                 <p>
-                  <span>NFT Name:</span>
+                  <span>Họ và tên:</span>
                   {name || ""}
                 </p>
                 <p>
-                  <span>Website:</span>
+                  <span>Email:</span>
                   {website || ""}
                 </p>
               </div>
 
               <div className={Style.DropZone_box_aside_box_preview_two}>
                 <p>
-                  <span>Description</span>
+                  <span>Thư giới thiệu:</span>
                   {description || ""}
                 </p>
               </div>
 
               <div className={Style.DropZone_box_aside_box_preview_three}>
                 <p>
-                  <span>Royalties</span>
+                  <span>Tuổi:</span>
                   {royalties || ""}
                 </p>
                 <p>
@@ -95,11 +95,11 @@ const DropZone = ({
                   {fileSize || ""}
                 </p>
                 <p>
-                  <span>Properties</span>
+                  <span>Giới tính:</span>
                   {properties || ""}
                 </p>
                 <p>
-                  <span>Category</span>
+                  <span>Vị trí ứng tuyển:</span>
                   {category || ""}
                 </p>
               </div>

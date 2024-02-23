@@ -8,7 +8,6 @@ import { TbArrowBigLeft, TbArrowBigRight, TbArrowBigRightLine, TbArrowBigLeftLin
 import Style from "./BigNFTSlider.module.css";
 import images from "../../img";
 import Button from "../Button/Button";
-import { ST } from "next/dist/shared/lib/utils";
 
 const BigNFTSlider = () => {
   const [idNumber, setIdNumber] = useState(0);
@@ -18,11 +17,11 @@ const BigNFTSlider = () => {
       title: "Hồ sơ 1",
       id: 1,
       name: "Nguyễn Thúy Quỳnh",
-      collection: "MI2",
+      collection: "HUST",
       price: "000000636374 ETH",
       like: 243,
       image: images.user1,
-      nftImage: images.nft_image_1,
+      nftImage: images.cvimage,
       time: {
         days: 27,
         hours: 10,
@@ -139,18 +138,29 @@ const BigNFTSlider = () => {
 
           <div className={Style.bigNFTSlider_box_left_bidding}>
             <div className={Style.bigNFTSlider_box_left_bidding_box}>
-              <small>Current Bid</small>
+              <small>Phí giao dịch</small>
               <p>
                 {sliderData[idNumber].price} <span>$221,21</span>
               </p>
             </div>
 
             <p className={Style.bigNFTSlider_box_left_bidding_box_auction}>
-              <MdTimer className={Style.bigNFTSlider_box_left_bidding_box_icon} />
-              <span>Auction ending in</span>
+              <MdVerified className={Style.bigNFTSlider_box_left_bidding_box_icon} />
+              <span>Ngành: Hệ thống thông tin quản lý</span>
             </p>
 
-            <div className={Style.bigNFTSlider_box_left_bidding_box_timer}>
+            <p className={Style.bigNFTSlider_box_left_bidding_box_auction}>
+              <MdVerified className={Style.bigNFTSlider_box_left_bidding_box_icon} />
+              <span>Khoa: Toán-Tin</span>
+              <spa>Đại học Bách khoa Hà Nội</spa>
+            </p>
+
+            <p className={Style.bigNFTSlider_box_left_bidding_box_auction}>
+              <MdVerified className={Style.bigNFTSlider_box_left_bidding_box_icon} />
+              <span>CPA: 3.22</span>
+            </p>
+
+            {/* <div className={Style.bigNFTSlider_box_left_bidding_box_timer}>
               <div className={Style.bigNFTSlider_box_left_bidding_box_timer_item}>
                 <p>{sliderData[idNumber].time.days}</p>
                 <span>Ngày</span>
@@ -170,12 +180,12 @@ const BigNFTSlider = () => {
                 <p>{sliderData[idNumber].time.seconds}</p>
                 <span>Giây</span>
               </div>
-            </div>
+            </div> */}
 
 
             <div className={Style.bigNFTSlider_box_left_button}>
-              <Button btnName='Place' handleClick={() => {}} />
-              <Button btnName='View' handleClick={() => {}} />
+              <Button btnName='Xem hồ sơ' handleClick={() => {}} />
+              <Button btnName='Báo cáo' handleClick={() => {}} />
             </div>
           </div>
 

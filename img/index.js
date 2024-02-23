@@ -47,6 +47,7 @@ import metamask from './metamask.svg';
 import walletConnect from './walletconnect.svg';
 import walletLink from './walletLink.png';
 import formatic from './formatic.png';
+import cvimage from './cvimage.png';
 
 export default {
   formatic,
@@ -98,4 +99,5 @@ export default {
   vimeo,
   youtube,
   zgcmq,
+  cvimage
 };
